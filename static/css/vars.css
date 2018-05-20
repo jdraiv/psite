@@ -1,0 +1,12 @@
+
+/*
+-text-color: #000;
+--main-color: #141726;
+*/
+
+:root{
+    --main-font: 'Montserrat', sans-serif;
+    --text-color: #000;
+    --link-color: #000;
+    --main-color: #white; 
+}

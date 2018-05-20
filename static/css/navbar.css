@@ -1,0 +1,48 @@
+
+#nav-ul{
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    box-shadow: 0px 1px 0px #E6E6E6;
+    list-style-type: none;
+    font-family: var(--main-font);
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.nav-item{
+    padding-left: 2%;
+}
+
+.nav-link{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    border-bottom: solid 2px var(--text-color);
+}
+
+#nav-icon-container{
+    height: 85%;
+    text-align: center;
+    align-self: center;
+}
+
+#nav-icon{
+    height: 100%;
+    animation: celestial-movement 4s infinite;
+    border-radius: 50%;
+}
+
+
+@keyframes celestial-movement{
+    0% {}
+    50% {
+        transform: scale(1.1) rotate(3deg);
+    }
+}

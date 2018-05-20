@@ -7,7 +7,7 @@ views = Blueprint('views', __name__, template_folder='templates')
 
 @views.route('/')
 def homepage_view():
-    return 'Homepage!'
+    return render_template('home.html')
 
 
 @views.route('/login')

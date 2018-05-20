@@ -1,0 +1,45 @@
+
+<!doctype html>
+
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="static/css/vars.css">
+        <link rel="stylesheet" href="static/css/home.css">
+        <link rel="stylesheet" href="static/css/navbar.css">
+
+        <!-- React -->
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="navbar-container">
+                <nav>
+                    <ul id="nav-ul">
+                        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                        <li class="nav-item" id="nav-icon-container">
+                            <img id="nav-icon" src="{{url_for('static', filename='icons/Sun.svg')}}"/>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Essays</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="theme-container"></div>
+        </div>
+    </body>
+    
+    <script src="{{url_for('static', filename='components/js/ThemeSelector.js')}}"></script> 
+
+    <!-- script src="{{url_for('static', filename='components/js/Navbar.js')}}"></script> -->
+
+</html>

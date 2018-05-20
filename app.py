@@ -7,6 +7,7 @@ from auth.main import auth
 from auth.User import UserModel
 
 import flask_login
+from transformer import convert_to_js
 
 
 flask_app = Flask(__name__)
@@ -24,6 +25,8 @@ login_manager = flask_login.LoginManager()
 login_manager.init_app(flask_app)
 login_manager.session_protection = "strong"
 
+convert_to_js('Navbar')
+convert_to_js('ThemeSelector')
 
 @login_manager.user_loader
 def load_user(user_id):
