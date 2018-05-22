@@ -18,28 +18,17 @@
 
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
 
     </head>
 
     <body>
         <div id="container">
-            <div id="navbar-container">
-                <nav>
-                    <ul id="nav-ul">
-                        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                        <li class="nav-item" id="nav-icon-container">
-                            <img id="nav-icon" src="{{url_for('static', filename='icons/Sun.svg')}}"/>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Essays</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div id="theme-container"></div>
         </div>
     </body>
     
-    <script src="{{url_for('static', filename='components/js/ThemeSelector.js')}}"></script> 
-
-    <!-- script src="{{url_for('static', filename='components/js/Navbar.js')}}"></script> -->
+    <script src="{{url_for('static', filename='components/js/Navbar.js')}}"></script>
 
 </html>

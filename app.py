@@ -26,7 +26,7 @@ login_manager.init_app(flask_app)
 login_manager.session_protection = "strong"
 
 convert_to_js('Navbar')
-convert_to_js('ThemeSelector')
+
 
 @login_manager.user_loader
 def load_user(user_id):

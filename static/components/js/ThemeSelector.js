@@ -5,14 +5,15 @@ class ThemeSelector extends React.Component {
 
         this.state = {
             currentTheme: 'dark',
-            darkThemeVars: {'main-color': '141726', 'text-color': 'white'}
+            darkThemeVars: {'main-color': '141726', 'text-color': 'white'},
+            lightThemeVars: {'main-color': 'white', 'text-color': '000'}
         }
     }
 
     decideTheme() {
         let hour = new Date().getHours();
 
-        if (hour >= 18 && hour <= 4) {
+        if (hour >= 16 && hour <= 4) {
             this.setState({currentTheme: 'dark'})
         }
         this.setState({currentTheme: 'light'})
@@ -23,10 +24,14 @@ class ThemeSelector extends React.Component {
 
         if (this.state.currentTheme === 'dark') {
             for (const [key, value] of Object.entries(this.state.darkThemeVars)) {
-                console.log("Hai")
+                console.log("Dark theme selected.")
                 document.documentElement.style.setProperty(`--${key}`, `#${value}`)
             }
         }
+    }
+    
+    setLightTheme() {
+
     }
 
     componentWillMount() {
@@ -34,7 +39,10 @@ class ThemeSelector extends React.Component {
     }
 
     render() {
-        return React.createElement("button", {onClick: this.setDarkTheme()}, "Click Me")
+        return (
+            React.createElement("button", {onClick: this.setDarkTheme()}, "Click Me"),
+            React.createElement("button", {onClick: this.setLightTheme()}, "Light")
+        )
     }
 }
 
