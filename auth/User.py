@@ -2,5 +2,5 @@
 import flask_login
 
 
-class UserModel(flask_login.UserMixin):
+class User(flask_login.UserMixin):
     pass
