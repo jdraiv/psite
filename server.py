@@ -24,11 +24,13 @@ bcrypt = Bcrypt(flask_app)
 
 # Blueprints
 from views.routes import views
-from auth.main import auth
-from blueprints.projects.main import projects_section
+from auth.auth_router import auth
+from blueprints.projects.projects_router import projects_section
 
 flask_app.register_blueprint(views)
 flask_app.register_blueprint(auth)
 flask_app.register_blueprint(projects_section)
 
 convert_to_js('Navbar')
+convert_to_js('Projects')
+convert_to_js('Project-Adder')

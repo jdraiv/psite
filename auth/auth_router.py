@@ -19,6 +19,9 @@ def load_user(user_id):
     c_user.id = user_id
     return c_user
 
+@auth.route('/sign')
+def sign():
+    pass
 
 @auth.route('/login_post', methods=['POST'])
 def login():
@@ -37,13 +40,11 @@ def login():
                 return redirect('/protected')
         return redirect('/')
 
-
 @auth.route('/logout')
 @flask_login.login_required
 def logout():
     flask_login.logout_user()
     return redirect('/')
-
 
 # Protected routes
 @auth.route('/protected')

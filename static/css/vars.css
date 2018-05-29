@@ -3,5 +3,8 @@
 :root{
     --main-font: 'Karla', sans-serif;
     --text-color: #56577F;
-    --main-color: #white;
+    --main-color: white;
+    --soft-green: #68CE9E;
+    --green-hover: #60c194;
+    --secondary-color: #2C2C3C;
 }

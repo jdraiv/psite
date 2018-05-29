@@ -11,7 +11,7 @@ class Navbar extends React.Component {
         let hour = new Date().getHours();
         console.log(hour);
 
-        if (hour >= 16 || hour <= 4) {
+        if (hour >= 18 || hour <= 4) {
             this.setState({timeIcon: 'static/icons/Moon.svg'})
         } else {
             this.setState({timeIcon: 'static/icons/Sun.svg'})
@@ -27,7 +27,7 @@ class Navbar extends React.Component {
             <div id="navbar-container">
                 <nav>
                     <ul id="nav-ul">
-                        <li className="nav-item"><a className="nav-link" href="#">Projects</a></li>
+                        <li className="nav-item"><a className="nav-link" href="/projects">Projects</a></li>
                         <li className="nav-item" id="nav-icon-container">
                             <img id="nav-icon" src={this.state.timeIcon}/>
                         </li>
@@ -41,5 +41,5 @@ class Navbar extends React.Component {
 
 ReactDOM.render(
     <Navbar />,
-    document.getElementById('container')
+    document.getElementById('navbar-container')
 );
