@@ -1,6 +1,5 @@
 from flask import Blueprint, request, render_template, redirect, jsonify
 from flask_login import current_user
-
 from server import mongo_app, bcrypt
 import json
 

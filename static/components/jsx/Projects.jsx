@@ -14,7 +14,7 @@ function ProjectsRender(props) {
 }
 
 
-class ProjectsShowcase extends React.Component {
+export default class ProjectsShowcase extends React.Component {
     constructor(props) {
         super(props);
 
@@ -62,8 +62,3 @@ class ProjectsShowcase extends React.Component {
         )
     }
 }
-
-ReactDOM.render(
-    <ProjectsShowcase />,
-    document.getElementById('projects-section')
-);

@@ -1,6 +1,6 @@
 
 
-class Navbar extends React.Component {
+export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
 
@@ -38,8 +38,3 @@ class Navbar extends React.Component {
         )
     }
 }
-
-ReactDOM.render(
-    <Navbar />,
-    document.getElementById('navbar-container')
-);

@@ -1,5 +1,5 @@
 
-class ProjectAdder extends React.Component {
+export default class ProjectAdder extends React.Component {
     constructor(props) {
         super(props);
 
@@ -29,24 +29,25 @@ class ProjectAdder extends React.Component {
     
     render() {
         return (
-            <div id="project-adder-inputs">
+            <div id="project-adder-container">
+                <div id="project-adder-inputs">
+                    <h1 id="project-adder-header">Add a new project!</h1>
 
-                <h1 id="project-adder-header">Add a new project!</h1>
-
-                <form id="test-form" onSubmit={this.handleSubmit}>
-                    <input className="project-adder-input" type="text" placeholder="Project Name" ref="projectName" />
-                    <input className="project-adder-input" type="text" placeholder="Category" ref="category"/>
-                    <input className="project-adder-input" type="text" placeholder="Link" ref="projectLink"/>
-                    <input className="project-adder-input" type="text" placeholder="Security Key" ref="securityKey"/>
-                    <button id="project-adder-submit">Add</button>
-                </form>
+                    <form id="test-form" onSubmit={this.handleSubmit}>
+                        <input className="project-adder-input" type="text" placeholder="Project Name" ref="projectName" />
+                        <input className="project-adder-input" type="text" placeholder="Category" ref="category"/>
+                        <input className="project-adder-input" type="text" placeholder="Link" ref="projectLink"/>
+                        <input className="project-adder-input" type="text" placeholder="Security Key" ref="securityKey"/>
+                        <button id="project-adder-submit">Add</button>
+                    </form>
+                    
+                </div>
             </div>
         )
     }
 }
 
-
 ReactDOM.render(
     <ProjectAdder />,
-    document.getElementById('project-adder-container')
-);
+    document.getElementById('adder')
+)

@@ -5,3 +5,5 @@ __pycache__/
 .DS_STORE
 .vscode
 secret.py
+package-lock.json
+node_modules
