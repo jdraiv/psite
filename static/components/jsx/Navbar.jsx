@@ -31,7 +31,7 @@ export default class Navbar extends React.Component {
                         <li className="nav-item" id="nav-icon-container">
                             <img id="nav-icon" src={this.state.timeIcon}/>
                         </li>
-                        <li className="nav-item"><a className="nav-link" href="#">Essays</a></li>
+                        <li className="nav-item"><a className="nav-link" href="/essays">Essays</a></li>
                     </ul>
                 </nav>
             </div>

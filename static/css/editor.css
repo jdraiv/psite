@@ -1,0 +1,60 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#container{
+    width: auto;
+    height: auto;
+}
+
+
+#editor{
+    width: 80%;
+    margin-left: 10%;
+}
+
+#post-container{
+    width: 100%;
+    margin-top: 2%;
+}
+
+.inputs{
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 20px;
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+#post-btn{
+    display: block;
+    width: 150px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    background-color: var(--soft-green);
+    color: white;
+    font-family: var(--main-font);
+}
+
+#post-btn:hover{
+    background-color: var(--green-hover);
+    cursor: pointer;
+}
+
+.ql-toolbar{
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 10%;
+    text-align: center;
+}

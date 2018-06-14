@@ -3,8 +3,6 @@ from flask import Flask
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 
-from transformer import convert_to_js
-
 import flask_login
 import secret
 
@@ -30,6 +28,3 @@ flask_app.register_blueprint(views)
 flask_app.register_blueprint(auth)
 flask_app.register_blueprint(projects_section)
 flask_app.register_blueprint(essays_section)
-
-
-# convert_to_js('Test')

@@ -8,7 +8,7 @@ function ProjectsRender(props) {
             return <button className="project-link" onClick={() => window.open(project['link'], "_blank")}>{project['name']}</button>
         })
         return <div>{projects}</div>
-    } else{
+    } else {
         return null
     }
 }
@@ -39,7 +39,6 @@ export default class ProjectsShowcase extends React.Component {
     }
 
     onClick(event) {
-        console.log(event.target.name)
         this.setState({projectCategory: event.target.name})
     }
 

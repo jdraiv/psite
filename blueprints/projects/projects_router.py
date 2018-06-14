@@ -32,8 +32,6 @@ def add_project():
                 'category': post_data['category'], 
                 'link': post_data['link']
                 })
-            print("Success")
             return jsonify(status="Success")
-        print("error")
         return jsonify(status="Error")
 
