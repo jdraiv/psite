@@ -27,7 +27,7 @@ export default class Navbar extends React.Component {
             <div id="navbar-container">
                 <nav>
                     <ul id="nav-ul">
-                        <li className="nav-item"><a className="nav-link" href="/projects">Projects</a></li>
+                        <li className="nav-item"><a className="nav-link" href="/">Projects</a></li>
                         <li className="nav-item" id="nav-icon-container">
                             <img id="nav-icon" src={this.state.timeIcon}/>
                         </li>
