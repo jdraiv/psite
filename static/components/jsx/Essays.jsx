@@ -35,7 +35,6 @@ class EssaysShowcase extends React.Component {
         })
         .then((data) => {
             this.setState({essays : data})
-            console.log(this.state.essays);
         })
     }
 

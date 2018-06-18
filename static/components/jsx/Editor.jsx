@@ -1,13 +1,13 @@
 
 import Navbar from './Navbar.jsx';
+import EssayAdder from './Essay-Adder.jsx';
 
 class Editor extends React.Component {
     render() {
-        return (
-            <div>
-                <Navbar />
-            </div>
-        )
+        return [
+            <Navbar />,
+            <EssayAdder />
+        ]
     }
 }
 

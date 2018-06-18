@@ -9,6 +9,11 @@ essays_section = Blueprint('essays', __name__, template_folder='essays')
 def essays():
     return render_template('essays.html')
 
+@essays_section.route('/essays/<title>')
+def read_essay(title):
+    print(title)
+    return render_template('essay.html')
+
 @essays_section.route('/editor')
 def editor():
     return render_template('editor.html')
@@ -22,9 +27,9 @@ def post_essay():
         if bcrypt.check_password_hash(the_key['key'], post_data['key']):
             mongo_app.db.essays.insert({
                 'title': post_data['title'],
-                'content': post_data['content'],
-                'image': post_data['image'],
-                'date': str(datetime.date.today())
+                'data': {
+                    
+                }
             })
             return jsonify(status="success")
         return jsonify(status="error")
