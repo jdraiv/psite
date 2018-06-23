@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 
 import flask_login
-import secret
 import os
 
 
@@ -14,6 +13,8 @@ flask_app = Flask(__name__)
 is_prod = os.environ.get('IS_HEROKU', None)
 
 if not is_prod:
+    import secret
+    
     flask_app.config.update(
         DEBUG=True,
         SECRET_KEY=secret.secret_key,
