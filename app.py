@@ -6,15 +6,14 @@ from flask_bcrypt import Bcrypt
 import flask_login
 import os
 
-
 flask_app = Flask(__name__)
 
 # Production Igniter
 is_prod = os.environ.get('IS_HEROKU', None)
 
 if not is_prod:
-    import secret
-    
+    # import secret
+
     flask_app.config.update(
         DEBUG=True,
         SECRET_KEY=secret.secret_key,
