@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify
 from flask_login import current_user
-from server import mongo_app, bcrypt
+from app import mongo_app, bcrypt
 import json, datetime, requests
 
 essays_section = Blueprint('essays', __name__, template_folder='essays')

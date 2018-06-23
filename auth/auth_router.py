@@ -1,7 +1,7 @@
 
 from flask import Blueprint, request, render_template, redirect
 from .User import User
-from server import flask_app, mongo_app, bcrypt
+from app import flask_app, mongo_app, bcrypt
 import flask_login
 
 
