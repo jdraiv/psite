@@ -5,15 +5,27 @@ from flask_bcrypt import Bcrypt
 
 import flask_login
 import secret
+import os
 
 
 flask_app = Flask(__name__)
 
-flask_app.config.update(
-    DEBUG=True,
-    SECRET_KEY='not-secret',
-    MONGO_URI=secret.db_url,
-)
+# Production Igniter
+is_prod = os.environ.get('IS_HEROKU', None)
+
+if not is_prod:
+    flask_app.config.update(
+        DEBUG=True,
+        SECRET_KEY=secret.secret_key,
+        MONGO_URI=secret.db_url,
+    )
+else:
+    flask_app.config.update(
+        DEBUG=True,
+        SECRET_KEY=os.environ.get('DB_URL', None),
+        MONGO_URI=os.environ.get('SECRET_KEY', None)
+    )
+
 
 mongo_app = PyMongo(flask_app)
 bcrypt = Bcrypt(flask_app)
