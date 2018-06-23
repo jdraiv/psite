@@ -1,26 +1,28 @@
 
 import Navbar from './Navbar.jsx';
 
-// Fix title alignment bottom
+
+function imageHeader(str) {
+    let initialLink = str.substring(str.search('src=') + 5)
+    return initialLink.substring(0, initialLink.search('"'))
+}
 
 
-function Essays(props) {
-    const data = props.data;
+class Essay extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
-    if (typeof data != "undefined") {
-        const essays = data.map((essay) => {
-            return (
-                <div className="essay-item">
-                    <img className="essay-image" src={essay['image']}></img>
-                    <a class="essay-title" href="#">{essay['title']}</a>
-                </div>
-            )
-        });
-        return <div id="essays-box">{essays}</div>
-    } else {
-        return null
+    render() {
+        return (
+            <div className="essay-item">
+                <img className="essay-image" src={this.props.image}></img>
+                <a className="essay-title" href={this.props.link} target="_blank">{this.props.title}</a>
+            </div>
+        )
     }
 }
+
 
 class EssaysShowcase extends React.Component {
     constructor(props) {
@@ -29,12 +31,14 @@ class EssaysShowcase extends React.Component {
     }
 
     getEssays() {
-        fetch('/get_essays')
+        const url = "https://api.tumblr.com/v2/blog/jdraiv.tumblr.com/posts/text?api_key=fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4&notes_info=true";
+
+        fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            this.setState({essays : data})
+            this.setState({essays: data['response']['posts']});
         })
     }
 
@@ -43,13 +47,14 @@ class EssaysShowcase extends React.Component {
     }
 
     render() {
+        const essays = this.state.essays.map((essay) => {
+            return (
+                <Essay title={essay['title']} link={essay['short_url']} image={imageHeader(essay['reblog']['comment'])} />
+            )
+        })
         return [
             <Navbar />,
-            <div id="essays-container">
-                {
-                    <Essays data={this.state.essays} />
-                }
-            </div>
+            <div id="essays-box">{essays}</div>
         ]
     }
 }

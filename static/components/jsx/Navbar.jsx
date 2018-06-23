@@ -9,7 +9,6 @@ export default class Navbar extends React.Component {
 
     decideIcon() {
         let hour = new Date().getHours();
-        console.log(hour);
 
         if (hour >= 18 || hour <= 4) {
             this.setState({timeIcon: 'static/icons/Moon.svg'})

@@ -5,10 +5,9 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        editor: './static/components/jsx/Editor.jsx',
         //home: './static/components/jsx/Home.jsx',
         //projectAdder: './static/components/jsx/Project-Adder.jsx',
-        //essays: './static/components/jsx/Essays.jsx',
+        essays: './static/components/jsx/Essays.jsx',
         //essay: './static/components/jsx/Essay.jsx',
     },
     output: {
