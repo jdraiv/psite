@@ -9,17 +9,14 @@ import os
 flask_app = Flask(__name__)
 
 # Production Igniter
-is_prod = os.environ.get('IS_HEROKU', None)
-
-if not is_prod:
-    # import secret
-
+try:
+    import secret 
     flask_app.config.update(
         DEBUG=True,
         SECRET_KEY=secret.secret_key,
         MONGO_URI=secret.db_url,
     )
-else:
+except:
     flask_app.config.update(
         DEBUG=True,
         SECRET_KEY=os.environ.get('DB_URL', None),
