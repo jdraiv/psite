@@ -8,6 +8,8 @@ import os
 
 flask_app = Flask(__name__)
 
+"""
+
 # Production Igniter
 try:
     import secret 
@@ -22,6 +24,13 @@ except:
         SECRET_KEY=os.environ.get('SECRET_KEY', None),
         MONGO_URI=os.environ.get('DB_URL', None)
     )
+"""
+
+flask_app.config.update(
+    DEBUG=True,
+    SECRET_KEY=os.environ.get('SECRET_KEY', None),
+    MONGO_URI=os.environ.get('DB_URL', None)
+)
 
 
 mongo_app = PyMongo(flask_app)
