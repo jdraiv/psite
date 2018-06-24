@@ -19,8 +19,8 @@ try:
 except:
     flask_app.config.update(
         DEBUG=True,
-        SECRET_KEY=os.environ.get('DB_URL', None),
-        MONGO_URI=os.environ.get('SECRET_KEY', None)
+        SECRET_KEY=os.environ.get('SECRET_KEY', None),
+        MONGO_URI=os.environ.get('DB_URL', None)
     )
 
 
