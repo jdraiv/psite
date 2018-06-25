@@ -43,21 +43,24 @@ export default class ProjectsShowcase extends React.Component {
     }
 
     render() {
-        return (
-            <div id="projects-showcase">
-                <div id="categories-container">
-                    {
-                        Object.keys(this.state.projects).map((key) => {
-                            return <button id="category-btn" onClick={this.onClick} name={key}>{key}</button>
-                        })
-                    }
+        return [
+            <section id="projects-section">
+                <h1 id="projects-section-header">Projects</h1>,
+                <div id="projects-showcase">
+                    <div id="categories-container">
+                        {
+                            Object.keys(this.state.projects).map((key) => {
+                                return <button id="category-btn" onClick={this.onClick} name={key}>{key}</button>
+                            })
+                        }
+                    </div>
+                    <div id="projects-container">
+                        {
+                            <ProjectsRender data={this.state.projects[this.state.projectCategory]} />
+                        }
+                    </div>
                 </div>
-                <div id="projects-container">
-                    {
-                        <ProjectsRender data={this.state.projects[this.state.projectCategory]} />
-                    }
-                </div>
-            </div>
-        )
+            </section>
+        ]
     }
 }

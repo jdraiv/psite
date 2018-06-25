@@ -24,7 +24,7 @@ class Essay extends React.Component {
 }
 
 
-class EssaysShowcase extends React.Component {
+export default class EssaysShowcase extends React.Component {
     constructor(props) {
         super(props)
         this.state = {essays: []}
@@ -53,13 +53,17 @@ class EssaysShowcase extends React.Component {
             )
         })
         return [
-            <Navbar />,
-            <div id="essays-box">{essays}</div>
+            <section id="essays-section">
+                <h1 id="essays-section-header">Essays</h1>
+                <div id="essays-box">{essays}</div>
+            </section>
         ]
     }
 }
 
+/*
 ReactDOM.render(
     <EssaysShowcase />,
     document.getElementById('container')
 );
+*/

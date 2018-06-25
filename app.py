@@ -8,23 +8,7 @@ import os
 
 flask_app = Flask(__name__)
 
-"""
-
 # Production Igniter
-try:
-    import secret 
-    flask_app.config.update(
-        DEBUG=True,
-        SECRET_KEY=secret.secret_key,
-        MONGO_URI=secret.db_url,
-    )
-except:
-    flask_app.config.update(
-        DEBUG=True,
-        SECRET_KEY=os.environ.get('SECRET_KEY', None),
-        MONGO_URI=os.environ.get('DB_URL', None)
-    )
-"""
 
 flask_app.config.update(
     DEBUG=True,
@@ -40,9 +24,7 @@ bcrypt = Bcrypt(flask_app)
 from views.routes import views
 from auth.auth_router import auth
 from blueprints.projects.projects_router import projects_section
-from blueprints.essays.essays_router import essays_section
 
 flask_app.register_blueprint(views)
 flask_app.register_blueprint(auth)
 flask_app.register_blueprint(projects_section)
-flask_app.register_blueprint(essays_section)

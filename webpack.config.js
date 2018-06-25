@@ -5,10 +5,8 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        //home: './static/components/jsx/Home.jsx',
+        home: './static/components/jsx/Home.jsx',
         //projectAdder: './static/components/jsx/Project-Adder.jsx',
-        essays: './static/components/jsx/Essays.jsx',
-        //essay: './static/components/jsx/Essay.jsx',
     },
     output: {
         path: path.resolve(__dirname, './static/bundles'),

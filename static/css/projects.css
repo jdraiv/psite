@@ -6,6 +6,13 @@
     align-content: center;
 }
 
+#projects-section-header{
+    text-align: center;
+    padding-top: 1%;
+    font-family: var(--main-font);
+    font-size: 3em;
+}
+
 #categories-container{
     display: flex;
     width: 50%;
@@ -35,7 +42,7 @@
 }
 
 .project-link:hover{
-    background-color: #454566;
+    background-color: var(--secondary-color);
     cursor: pointer;
 }
 
